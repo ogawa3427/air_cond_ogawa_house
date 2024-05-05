@@ -125,7 +125,7 @@ function generateLink() {
         queryParams.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
     });
     const queryString = queryParams.join('&');
-    const link = `${window.location.pathname}?${queryString}`+ 'https://ogawa3427.github.io';
+    const link = 'https://ogawa3427.github.io' + `${window.location.pathname}?${queryString}`;
     console.log('生成されたリンク:', link); // またはリンクをどこかに表示する
 
     const linkContainer = document.getElementById('link_box');
