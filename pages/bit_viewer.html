@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bit Viewer</title>
+    <link rel="stylesheet" type="text/css" href="bit_viewer.css">
+    <script src="bit_viewer.js"></script>
+</head>
+<body>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const params = getQueryParams();
+        params.forEach((value, key) => {
+            addUnit(key, value);
+        });
+    });
+    </script>
+    <h1>Bit Viewer</h1>
+    <button onclick="generateLink()">リンクを生成（コピペすると今表示されている内容を保存できます）</button>
+    <div id="link_box">
+
+    </div>
+    <button onclick="addUnit()">表示を追加する</button>
+
+    <div id="bitViewer"></div>
+</body>
+</html>
+
