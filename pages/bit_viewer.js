@@ -125,13 +125,13 @@ function generateLink() {
         queryParams.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
     });
     const queryString = queryParams.join('&');
-    const link = `${window.location.pathname}?${queryString}`;
-    console.log('生成されたリンク:', link); // またはリンクをどこかに表示する
+    const link = window.location.origin + window.location.pathname + '?' + queryString;
+    console.log('生成されたリンク:', link);
 
     const linkContainer = document.getElementById('link_box');
     linkContainer.innerHTML = ''; // 前回の出力を消す
     const linkElement = document.createElement('input');
-    linkElement.value = 'https://ogawa3427.github.io' + link;
+    linkElement.value = link;
     linkElement.readOnly = true;
     linkElement.style.width = '100%';
     linkContainer.appendChild(linkElement);
